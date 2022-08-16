@@ -10,6 +10,9 @@ interface User {
   email: string | null
   emailVerified: Date | null
   image: string | null
+  paid: boolean | null
+  payPeriodStart: number | null
+  payPeriodEnd: number | null
 }
 
 interface Account {
@@ -54,6 +57,9 @@ const userSchema = new Schema<User>({
   email: { type: String, unique: true },
   emailVerified: { type: Date },
   image: { type: String },
+  paid: {type: Boolean},
+  payPeriodStart: {type: Number},
+  payPeriodEnd: {type: Number}
 })
 
 const accountSchema = new Schema<Account>({
